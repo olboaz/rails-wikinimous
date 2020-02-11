@@ -1,0 +1,16 @@
+<div>
+  <h1><%= link_to "Wikinimous", articles_path %></h1>
+  <%= link_to "new article", new_article_path %>
+</div>
+
+<h2> Editing Article</h2>
+
+<%= form_for @article do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :content %>
+<%= f.text_field :content%>
+<%= f.submit %>
+<% end %>
+
+<p><%= @article.content %> </p>
