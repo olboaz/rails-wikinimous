@@ -1,10 +1,13 @@
-<div>
-  <h1><%= link_to "Wikinimous", articles_path %></h1>
-  <%= link_to "new article", new_article_path %>
+<div class="navbar navbar-light bg-light">
+  <h4 class="navbar-brand"><%= link_to "Wikinimous", articles_path %></h4>
+  <button type="button" class="btn btn-light"><%= link_to "new article", new_article_path %></button>
 </div>
 
-<% @articles.each do |article| %>
-  <h3><%= link_to article.title, article_path(article) %></h3>
-  <p><%= article.content %></p>
-<% end %>
-
+<div class="container">
+  <div class="col-sm-8 col-sm-offset-2">
+    <% @articles.each do |article| %>
+      <h3><%= link_to article.title, article_path(article) %></h3>
+      <p><%= article.content %></p>
+    <% end %>
+  </div>
+</div>

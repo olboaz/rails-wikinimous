@@ -1,12 +1,18 @@
-<div>
-  <h1><%= link_to "Wikinimous", articles_path %></h1>
-  <%= link_to "new article", new_article_path %>
+<div class="navbar navbar-light bg-light">
+  <h4 class="navbar-brand"><%= link_to "Wikinimous", articles_path %></h4>
+  <button type="button" class="btn btn-light"><%= link_to "new article", new_article_path %></button>
 </div>
 
-<%= link_to "edit", edit_article_path %>
-<%= link_to "delete", article_path(@article),method: :delete, data: { confirm: "Are you sure?" } %>
-
-
-<h2> <%= @article.title%></h2>
-
+<div class="container">
+<div class="d-flex justify-content-between">
+  <h2> <%= @article.title%></h2>
+  <%= link_to edit_article_path do%>
+    <i class="fas fa-pencil-alt"></i>
+  <% end  %>
+  <%= link_to article_path(@article),method: :delete, data: { confirm: "Are you sure?" } do%>
+  <i class="fas fa-trash-alt"></i>
+  <% end %>
+</div>
+<hr>
 <p><%= @article.content %> </p>
+</div>

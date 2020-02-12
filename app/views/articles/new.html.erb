@@ -1,14 +1,12 @@
-<div>
-  <h1><%= link_to "Wikinimous", articles_path %></h1>
-  <%= link_to "new article", new_article_path %>
+<div class="navbar navbar-light bg-light">
+  <h4 class="navbar-brand"><%= link_to "Wikinimous", articles_path %></h4>
+  <button type="button" class="btn btn-light"><%= link_to "new article", new_article_path %></button>
+</div>
+<br>
+<div class="container">
+  <h2> New article</h2>
+  <%= render "form", article: @article %>
+  <br>
+  <%= link_to "Back", articles_path %>
 </div>
 
-<h2> New article</h2>
-
-<%= form_for @article do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<%= f.label :content %>
-<%= f.text_field :content%>
-<%= f.submit %>
-<% end %>
